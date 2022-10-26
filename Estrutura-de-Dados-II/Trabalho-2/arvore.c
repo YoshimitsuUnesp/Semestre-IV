@@ -1,10 +1,13 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include "arvore.h"
 
-typedef struct arvore{
-    char letra;
-    struct arvore *no;
-}Arvore;
-
-typedef struct lista{
-    struct lista *prox;
-}Lista;
+Arvore *criaArvore()
+{
+    Arvore *novo = malloc(sizeof(Arvore));
+    novo->caracter = NULL;
+    novo->dir = NULL;
+    novo->esq = NULL;
+    novo->freq = 0;
+    return novo;
+}
