@@ -6,6 +6,7 @@
 int main()
 {
     int op;
+    // Permanece em loop ate que o usuario deseje sair
     do
     {
         menuPrincipal();
@@ -13,7 +14,7 @@ int main()
         switch (op)
         {
         case 1:
-            
+            comprimeArquivo(); 
             break;
         case 2:
             /* code */

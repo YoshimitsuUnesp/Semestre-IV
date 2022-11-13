@@ -1,11 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+// Emite um aviso antes de encerrar o programa
 void sair(){
     printf("Encerrando programa...\n");
     exit(0);
 }
 
+// Limpa a tela de acordo com o SO do usuario
 void limparTela(){
     #ifdef _WIN32
     system("cls");
@@ -22,6 +24,7 @@ void limparTela(){
     #endif
 }
 
+// Mostra o menu de opcoes
 void menuPrincipal()
 {
     limparTela();
