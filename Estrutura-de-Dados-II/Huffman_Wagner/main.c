@@ -391,31 +391,31 @@ int main() {
     //----------- parte 1: tabela de frequência ---------------
     inicializa_tabela_com_zero(tabela_frequencia);
     preenche_tab_frequencia(texto, tabela_frequencia);
-    //imprime_tab_frequencia(tabela_frequencia);
+    imprime_tab_frequencia(tabela_frequencia);
 
     //----------- parte 2: Lista Encadeada Ordenada -----------
     criar_lista(&lista);
     preencher_lista(tabela_frequencia, &lista);
-    //imprimir_lista(&lista);
+    imprimir_lista(&lista);
 
     //----------- parte 3: Montar a Árvore de Huffman ---------
     arvore = montar_arvore(&lista);
-    printf("\n\tArvore de Huffam\n");
-    //imprimir_arvore(arvore, 0);
+    printf("\n\tArvore de Huffman\n");
+    imprimir_arvore(arvore, 0);
 
     //----------- parte 4: Montar o dicionário ----------------
     colunas = altura_arvore(arvore) + 1;
     dicionario = aloca_dicionario(colunas);
     gerar_dicionario(dicionario, arvore, "", colunas);
-    //imprime_dicionario(dicionario);
+    imprime_dicionario(dicionario);
 
     //----------- parte 5: Codificar ---------------------------
     codificado = codificar(dicionario, texto);
-    //printf("\n\tTexto codificado: %s\n", codificado);
+    printf("\n\tTexto codificado: %s\n", codificado);
 
     //----------- parte 6: Decodificar -------------------------
     decodificado = decodificar(codificado, arvore);
-    //printf("\n\tTexto decodificado: %s\n", decodificado);
+    printf("\n\tTexto decodificado: %s\n", decodificado);
 
     //----------- parte 7: Compactar ----------------------------
     compactar(codificado);

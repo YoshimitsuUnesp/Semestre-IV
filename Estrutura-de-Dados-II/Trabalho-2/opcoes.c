@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "arvore.h"
 
 // Emite um aviso antes de encerrar o programa
 void sair(){
@@ -27,7 +28,7 @@ void limparTela(){
 // Mostra o menu de opcoes
 void menuPrincipal()
 {
-    limparTela();
+    // limparTela();
     printf(
         "| ---------------- |\n"
         "|  MENU PRINCIPAL  |\n"
