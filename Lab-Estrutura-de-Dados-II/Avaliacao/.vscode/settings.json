@@ -1,5 +1,8 @@
 {
     "files.associations": {
-        "stdio.h": "c"
+        "stdio.h": "c",
+        "arvore-b.h": "c",
+        "stdlib.h": "c",
+        "arvore-bh": "c"
     }
 }
