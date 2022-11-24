@@ -1,3 +1,26 @@
+#include <stdlib.h>
+
+#define NMAXREGS 4
+#define bool int
+#define false 0
+#define true 1
+
+typedef struct arvb{
+  struct arvb *filha[NMAXREGS+2]; // Vetor que aponta para os nos filhos
+  int ordem; // Num max de reg em um no
+  int nregs; // Num atual de reg em um no
+  int chave[NMAXREGS+1]; // Vetor contendo as chaves dos regs em ordem crescente + 1 de overflow
+}ArvB, NoArvB;
+
+bool RemoveArvB(ArvB **arvore, int chave);
+bool RemoveArvBRec(NoArvB **no, int chave, bool *underflow);
+bool BuscaChaveNoArvB(NoArvB *no, int chave, int *pos);
+void TrocaChaveComAntecessora(NoArvB *no, int pos);
+void TrataNoComMenosChavesQuePermitido(NoArvB **no, int pos);
+void RemoveChaveEmNo(NoArvB *no, int pos);
+bool NoComMaisChavesQuePossivel(NoArvB *no);
+bool NoComMenosChavesQuePermitido(NoArvB *no);
+
 bool RemoveArvB(ArvB **arvore, int chave)
 {
   if ((*arvore) == NULL){
@@ -10,8 +33,7 @@ bool RemoveArvB(ArvB **arvore, int chave)
 
     /* Se o underflow chegou até a raiz da arvore, entao a raiz antiga
        deve ser eliminada e a nova será a sua única filha, reduzindo
-       assim a altura da arvore em 1.
-    */
+       assim a altura da arvore em 1. */
     
     if(underflow) {
       NoArvB *no = *arvore;
@@ -83,7 +105,6 @@ bool BuscaChaveNoArvB(NoArvB *no, int chave, int *pos)
   /* "pos" contém a posição da árvore filha na qual a chave poderá ser encontrada */
   return(false);
 }
-
 
 void TrocaChaveComAntecessora(NoArvB *no, int pos)
 {

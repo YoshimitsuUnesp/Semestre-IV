@@ -4,7 +4,8 @@
 #define MIN 2
 typedef struct No
 {
-    int item[MAX + 1], count;
+    int item[MAX + 1];
+    int count;
     struct No *link[MAX + 1];
 } No;
 
@@ -24,8 +25,7 @@ void InserirValor(int item, int pos, No *no, No *filho)
     no->count++;
 }
 
-void divideNo(int item, int *pval, int pos, No *no,
-              No *filho, No **novoNo)
+void divideNo(int item, int *pval, int pos, No *no, No *filho, No **novoNo)
 {
     int mediana, j;
     if (pos > MIN)
