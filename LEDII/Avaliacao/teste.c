@@ -121,15 +121,11 @@ int procura(No *noSelecionado, int item)
     {
         for (i = 0; i < noSelecionado->count; i++)
         {
-            if (procura(noSelecionado->link[i], item))
-                return 1;
             if (noSelecionado->item[i + 1] == item)
                 return 1;
         }
-        if (noSelecionado->link[i], item)
-            return 1;
+        return 0;
     }
-    return 0;
 }
 
 int main()
@@ -158,7 +154,7 @@ int main()
         case 2:
             printf("Digite o item a ser localizado:\n");
             scanf("%d", &ch);
-            achou = procura(raiz, item);
+            achou = procura(raiz, ch);
             if (achou == 1)
                 printf("Item encontrado!\n");
             else
