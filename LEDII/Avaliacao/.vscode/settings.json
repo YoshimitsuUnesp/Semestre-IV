@@ -3,6 +3,7 @@
         "stdio.h": "c",
         "arvore-b.h": "c",
         "stdlib.h": "c",
-        "arvore-bh": "c"
+        "arvore-bh": "c",
+        "arvoreb.h": "c"
     }
 }
