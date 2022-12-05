@@ -264,27 +264,40 @@ int rodarGrafo()
     {
         for (coluna = 0; coluna < n; coluna++)
         {
-            if (matrizAdj[linha][coluna] == no)
+            if (linha == no || coluna == no)
             {
-                matrizAdj[linha][coluna] = -1;
+                matrizAdj[no][coluna] = -1;
+                matrizAdj[linha][no] = -1;
             }
-            if (matrizAdj[linha][coluna] == -1)
-            {
-                matrizAdj[linha + 1][coluna + 1] = matrizAdj[linha][coluna];
-            }
-        }
-        // Printa matriz de adjacencia
-        std::cout << std::endl;
-        std::cout << "Matriz de adjacencia:" << std::endl;
-        for (linha = 0; linha < n; linha++)
-        {
-            for (coluna = 0; coluna < n; coluna++)
-                std::cout << "[" << matrizAdj[linha][coluna] << "]";
-            std::cout << std::endl;
         }
     }
 
-    // deletaGrafo(G);
+    /* ----- Remover arestas ------ */
+    int removeA, removeB;
+    std::cout << "Digite os nos que ligam a aresta que sera removida" << std::endl;
+    scanf("%d %d", &removeA, &removeB);
+    for (linha = 0; linha < n; linha++)
+    {
+        for (coluna = 0; coluna < n; coluna++)
+        {
+            if ((linha == removeA && coluna == removeB) || (linha == removeB && coluna == removeA))
+            {
+                matrizAdj[linha][coluna] = -1;
+            }
+        }
+    }
+
+    // Printa matriz de adjacencia
+    std::cout << std::endl;
+    std::cout << "Matriz de adjacencia:" << std::endl;
+    for (linha = 0; linha < n; linha++)
+    {
+        for (coluna = 0; coluna < n; coluna++)
+            std::cout << "[" << matrizAdj[linha][coluna] << "]";
+        std::cout << std::endl;
+    }
+
+    deletaGrafo(G);
     return 0;
 }
 
