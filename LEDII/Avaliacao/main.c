@@ -67,14 +67,14 @@ void split(int valor, int *pval, int posicao, ArvoreB *no, ArvoreB *filho, Arvor
     adicionaValor(valor, posicao, no, filho);
   else
     adicionaValor(valor, posicao - mediana, *novoNo, filho);
-    
+
   *pval = no->valor[no->contador];
   (*novoNo)->link[0] = no->link[no->contador];
   no->contador--;
 }
 
-// Set the value in the no
-int setValueInNode(int valor, int *pval, ArvoreB *no, ArvoreB **filho)
+// Seta o valor no no
+int setValor(int valor, int *pval, ArvoreB *no, ArvoreB **filho)
 {
   int posicao;
   if (!no)
@@ -90,16 +90,15 @@ int setValueInNode(int valor, int *pval, ArvoreB *no, ArvoreB **filho)
   }
   else
   {
-    for (posicao = no->contador;
-         (valor < no->valor[posicao] && posicao > 1); posicao--)
+    for (posicao = no->contador; (valor < no->valor[posicao]) && (posicao > 1); posicao--)
       ;
     if (valor == no->valor[posicao])
     {
-      printf("Duplicates not allowed\n");
+      printf("ERRO: Valores duplicados nao sao permitidos!\n");
       return 0;
     }
   }
-  if (setValueInNode(valor, pval, no->link[posicao], filho))
+  if (setValor(valor, pval, no->link[posicao], filho))
   {
     if (no->contador < MAX)
     {
@@ -114,45 +113,43 @@ int setValueInNode(int valor, int *pval, ArvoreB *no, ArvoreB **filho)
   return 0;
 }
 
-// Insertion operation
-void insertion(int valor)
+// Insere o valor na arvore
+void insercao(int valor)
 {
   int flag, i;
   ArvoreB *filho;
 
-  flag = setValueInNode(valor, &i, raiz, &filho);
+  flag = setValor(valor, &i, raiz, &filho);
   if (flag)
     raiz = criaNo(i, filho);
 }
 
-// Copy the successor
-void copySuccessor(ArvoreB *myNode, int posicao)
+// Copia o sucessor
+void copiaSucessor(ArvoreB *no, int posicao)
 {
-  ArvoreB *dummy;
-  dummy = myNode->link[posicao];
+  ArvoreB *aux;
 
-  for (; dummy->link[0] != NULL;)
-    dummy = dummy->link[0];
-  myNode->valor[posicao] = dummy->valor[1];
+  for (aux = no->link[posicao]; aux->link[0] != NULL;)
+    aux = aux->link[0];
+  no->valor[posicao] = aux->valor[1];
 }
 
-// Remove the value
-void removeVal(ArvoreB *myNode, int posicao)
+// Remove o valor
+void removeValor(ArvoreB *no, int posicao)
 {
-  int i = posicao + 1;
-  while (i <= myNode->contador)
+  int i;
+  for (i = posicao + 1; i <= no->contador; i++)
   {
-    myNode->valor[i - 1] = myNode->valor[i];
-    myNode->link[i - 1] = myNode->link[i];
-    i++;
+    no->valor[i - 1] = no->valor[i];
+    no->link[i - 1] = no->link[i];
   }
-  myNode->contador--;
+  no->contador--;
 }
 
-// Do right shift
-void rightShift(ArvoreB *myNode, int posicao)
+// Faz a troca pela direita
+void trocaDireita(ArvoreB *no, int posicao)
 {
-  ArvoreB *x = myNode->link[posicao];
+  ArvoreB *x = no->link[posicao];
   int i = x->contador;
 
   while (i > 0)
@@ -160,130 +157,127 @@ void rightShift(ArvoreB *myNode, int posicao)
     x->valor[i + 1] = x->valor[i];
     x->link[i + 1] = x->link[i];
   }
-  x->valor[1] = myNode->valor[posicao];
+  x->valor[1] = no->valor[posicao];
   x->link[1] = x->link[0];
   x->contador++;
 
-  x = myNode->link[posicao - 1];
-  myNode->valor[posicao] = x->valor[x->contador];
-  myNode->link[posicao] = x->link[x->contador];
+  x = no->link[posicao - 1];
+  no->valor[posicao] = x->valor[x->contador];
+  no->link[posicao] = x->link[x->contador];
   x->contador--;
   return;
 }
 
-// Do left shift
-void leftShift(ArvoreB *myNode, int posicao)
+// Faz a troca pela esquerda
+void trocaEsquerda(ArvoreB *no, int posicao)
 {
-  int i = 1;
-  ArvoreB *x = myNode->link[posicao - 1];
+  int i;
+  ArvoreB *x = no->link[posicao - 1];
 
   x->contador++;
-  x->valor[x->contador] = myNode->valor[posicao];
-  x->link[x->contador] = myNode->link[posicao]->link[0];
+  x->valor[x->contador] = no->valor[posicao];
+  x->link[x->contador] = no->link[posicao]->link[0];
 
-  x = myNode->link[posicao];
-  myNode->valor[posicao] = x->valor[1];
+  x = no->link[posicao];
+  no->valor[posicao] = x->valor[1];
   x->link[0] = x->link[1];
   x->contador--;
 
-  while (i <= x->contador)
+  for (i = 1; i <= x->contador; i++)
   {
     x->valor[i] = x->valor[i + 1];
     x->link[i] = x->link[i + 1];
-    i++;
   }
+
   return;
 }
 
-// Merge the nodes
-void mergeNodes(ArvoreB *myNode, int posicao)
+// Une os nos necessarios
+void unirNos(ArvoreB *no, int posicao)
 {
-  int i = 1;
-  ArvoreB *x1 = myNode->link[posicao], *x2 = myNode->link[posicao - 1];
+  int i;
+  ArvoreB *x1 = no->link[posicao], *x2 = no->link[posicao - 1];
 
   x2->contador++;
-  x2->valor[x2->contador] = myNode->valor[posicao];
-  x2->link[x2->contador] = myNode->link[0];
+  x2->valor[x2->contador] = no->valor[posicao];
+  x2->link[x2->contador] = no->link[0];
 
-  while (i <= x1->contador)
+  for (i = 1; i <= x1->contador; i++)
   {
     x2->contador++;
     x2->valor[x2->contador] = x1->valor[i];
     x2->link[x2->contador] = x1->link[i];
-    i++;
   }
 
-  i = posicao;
-  while (i < myNode->contador)
+  for (i = posicao; i < no->contador; i++)
   {
-    myNode->valor[i] = myNode->valor[i + 1];
-    myNode->link[i] = myNode->link[i + 1];
-    i++;
+    no->valor[i] = no->valor[i + 1];
+    no->link[i] = no->link[i + 1];
   }
-  myNode->contador--;
+  no->contador--;
   free(x1);
 }
 
-// Adjust the no
-void adjustNode(ArvoreB *myNode, int posicao)
+// Ajusta o no
+void ajustaNo(ArvoreB *no, int posicao)
 {
   if (!posicao)
   {
-    if (myNode->link[1]->contador > MIN)
+    if (no->link[1]->contador > MIN)
     {
-      leftShift(myNode, 1);
+      trocaEsquerda(no, 1);
     }
     else
     {
-      mergeNodes(myNode, 1);
+      unirNos(no, 1);
     }
   }
   else
   {
-    if (myNode->contador != posicao)
+    if (no->contador != posicao)
     {
-      if (myNode->link[posicao - 1]->contador > MIN)
+      if (no->link[posicao - 1]->contador > MIN)
       {
-        rightShift(myNode, posicao);
+        trocaDireita(no, posicao);
       }
       else
       {
-        if (myNode->link[posicao + 1]->contador > MIN)
+        if (no->link[posicao + 1]->contador > MIN)
         {
-          leftShift(myNode, posicao + 1);
+          trocaEsquerda(no, posicao + 1);
         }
         else
         {
-          mergeNodes(myNode, posicao);
+          unirNos(no, posicao);
         }
       }
     }
     else
     {
-      if (myNode->link[posicao - 1]->contador > MIN)
-        rightShift(myNode, posicao);
+      if (no->link[posicao - 1]->contador > MIN)
+        trocaDireita(no, posicao);
       else
-        mergeNodes(myNode, posicao);
+        unirNos(no, posicao);
     }
   }
 }
 
-// Delete a value from the no
-int delValFromNode(int valor, ArvoreB *myNode)
+// Deleta um valor do no
+int deletaValor(int valor, ArvoreB *no)
 {
   int posicao, flag = 0;
-  if (myNode)
+  if (no)
   {
-    if (valor < myNode->valor[1])
+    if (valor < no->valor[1])
     {
       posicao = 0;
       flag = 0;
     }
     else
     {
-      for (posicao = myNode->contador; (valor < myNode->valor[posicao] && posicao > 1); posicao--)
+      for (posicao = no->contador; (valor < no->valor[posicao] && posicao > 1); posicao--)
         ;
-      if (valor == myNode->valor[posicao])
+      if (valor == no->valor[posicao])
       {
         flag = 1;
       }
@@ -294,92 +288,91 @@ int delValFromNode(int valor, ArvoreB *myNode)
     }
     if (flag)
     {
-      if (myNode->link[posicao - 1])
+      if (no->link[posicao - 1])
       {
-        copySuccessor(myNode, posicao);
-        flag = delValFromNode(myNode->valor[posicao], myNode->link[posicao]);
+        copiaSucessor(no, posicao);
+        flag = deletaValor(no->valor[posicao], no->link[posicao]);
         if (flag == 0)
         {
-          printf("Given data is not present in B-Tree\n");
+          printf("ERRO: nao foi possivel encontrar o valor!\n");
         }
       }
       else
       {
-        removeVal(myNode, posicao);
+        removeValor(no, posicao);
       }
     }
     else
     {
-      flag = delValFromNode(valor, myNode->link[posicao]);
+      flag = deletaValor(valor, no->link[posicao]);
     }
-    if (myNode->link[posicao])
+    if (no->link[posicao])
     {
-      if (myNode->link[posicao]->contador < MIN)
-        adjustNode(myNode, posicao);
+      if (no->link[posicao]->contador < MIN)
+        ajustaNo(no, posicao);
     }
   }
   return flag;
 }
 
-// Delete operaiton
-void delete(int valor, ArvoreB *myNode)
+// Deleta o no
+void delete(int valor, ArvoreB *no)
 {
   ArvoreB *tmp;
-  if (!delValFromNode(valor, myNode))
+  if (!deletaValor(valor, no))
   {
-    printf("Not present\n");
+    printf("ERRO: no nao existente!\n");
     return;
   }
   else
   {
-    if (myNode->contador == 0)
+    if (no->contador == 0)
     {
-      tmp = myNode;
-      myNode = myNode->link[0];
+      tmp = no;
+      no = no->link[0];
       free(tmp);
     }
   }
-  raiz = myNode;
+  raiz = no;
   return;
 }
 
-void searching(int valor, int *posicao, ArvoreB *myNode)
+void procura(int valor, int *posicao, ArvoreB *no)
 {
-  if (!myNode)
+  if (!no)
   {
     return;
   }
 
-  if (valor < myNode->valor[1])
+  if (valor < no->valor[1])
   {
     *posicao = 0;
   }
   else
   {
-    for (*posicao = myNode->contador;
-         (valor < myNode->valor[*posicao] && *posicao > 1); (*posicao)--)
+    for (*posicao = no->contador; (valor < no->valor[*posicao]) && (*posicao > 1); (*posicao)--)
       ;
-    if (valor == myNode->valor[*posicao])
+    if (valor == no->valor[*posicao])
     {
-      printf("%d present in B-tree", valor);
+      printf("O valor %d foi encontrado!", valor);
       return;
     }
   }
-  searching(valor, posicao, myNode->link[*posicao]);
+  procura(valor, posicao, no->link[*posicao]);
   return;
 }
 
-void traversal(ArvoreB *myNode)
+void imprimeArvore(ArvoreB *no)
 {
   int i;
-  if (myNode)
+  if (no)
   {
-    for (i = 0; i < myNode->contador; i++)
+    for (i = 0; i < no->contador; i++)
     {
-      traversal(myNode->link[i]);
-      printf("%d ", myNode->valor[i + 1]);
+      imprimeArvore(no->link[i]);
+      printf("%d ", no->valor[i + 1]);
     }
-    traversal(myNode->link[i]);
+    imprimeArvore(no->link[i]);
   }
 }
 
@@ -387,20 +380,15 @@ int main()
 {
   int valor, ch;
 
-  insertion(8);
-  insertion(9);
-  insertion(10);
-  insertion(11);
-  insertion(15);
-  insertion(16);
-  insertion(17);
-  insertion(18);
-  insertion(20);
-  insertion(23);
+  insercao(8);
+  insercao(9);
 
-  traversal(raiz);
+  insercao(20);
+  insercao(23);
+
+  imprimeArvore(raiz);
 
   delete (20, raiz);
   printf("\n");
-  traversal(raiz);
+  imprimeArvore(raiz);
 }

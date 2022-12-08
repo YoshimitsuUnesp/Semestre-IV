@@ -1,0 +1,1 @@
+# Feita a remoção de uma aresta específica e de um nó na matriz de adjacências.

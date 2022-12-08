@@ -140,3 +140,24 @@ int grauMaximo(grafo *G) //
 
     return max; // Theta(1)
 }
+
+/* Pseudocodigo de busca em largura */
+void buscaEmLargura(grafo *G, vertice u){
+    /* Passo 1: escolhemos um vertice
+    Passo 2: colocamos esse vertice na fila, por ser o primeiro vertice, seu ANTERIOR sera nulo
+    Passo 3: adicionamos os vertices adjacentes na fila
+    Passo 4: pegamos seu vertice mais antigo, e marcamos ANTERIOR como o vertice escolhido
+    Passo 5: pegamos o proximo vertice da fila e fazemos os mesmos passos até que zere a fila
+    Passo 6: pegamos os vertices adjacentes do ultimo item da fila
+    Passo 7: repetimos os passos 3 a 6 até que acabem todos os vértices conectados entre si*/
+
+
+
+}
+
+/* Pseudocodigo de busca em profundidade */
+void buscaEmProfundidade(grafo *G, vertice u){
+    /* Parecido com o busca em largura, mas ao invés de usar uma fila e pegar o item mais antigo, 
+    usa uma pilha e pega o item mais recente*/
+    
+}
