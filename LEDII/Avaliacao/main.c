@@ -316,7 +316,7 @@ int deletaValor(int valor, ArvoreB *no)
 }
 
 // Deleta o no
-void delete(int valor, ArvoreB *no)
+void deletar(int valor, ArvoreB *no)
 {
   ArvoreB *tmp;
   if (!deletaValor(valor, no))
@@ -371,6 +371,7 @@ void imprimeArvore(ArvoreB *no)
     {
       imprimeArvore(no->link[i]);
       printf("%d ", no->valor[i + 1]);
+      printf("Altura do no: %d\n", i+1);
     }
     imprimeArvore(no->link[i]);
   }
@@ -382,13 +383,18 @@ int main()
 
   insercao(8);
   insercao(9);
-
+  insercao(10);
+  insercao(11);
+  insercao(15);
+  insercao(16);
+  insercao(17);
+  insercao(18);
   insercao(20);
   insercao(23);
 
   imprimeArvore(raiz);
 
-  delete (20, raiz);
+  deletar (20, raiz);
   printf("\n");
   imprimeArvore(raiz);
 }
