@@ -9,11 +9,12 @@
 
 typedef struct no
 {
-  int chave[MAX+1];
-  struct no *filha[MAX+1];
-  int nregs;
-  int ordem;
-}NoArvB;
+    int chave[MAX + 1];
+    struct no *filha[MAX + 1];
+    int nregs;
+    int ordem;
+    int altura;
+} NoArvB;
 
 NoArvB *raiz;
 
@@ -100,6 +101,8 @@ int setNo(int chave, int *pval, NoArvB *no, NoArvB **filho)
         }
         else
         {
+            no->altura++;
+            printf("ATENCAO: Fazendo um split...\n");
             divideNo(*pval, pval, pos, no, *filho, filho);
             return 1;
         }
@@ -116,6 +119,7 @@ NoArvB *criarNo(int chave, NoArvB *filho)
     novoNo->filha[0] = raiz;
     novoNo->filha[1] = filho;
     novoNo->ordem = MAX;
+    novoNo->altura = 0;
     return novoNo;
 }
 
@@ -132,14 +136,16 @@ void inserir(int chave)
 void listaArvore(NoArvB *noSelecionado)
 {
     int i;
-    
+
     if (noSelecionado)
     {
         for (i = 0; i < noSelecionado->nregs; i++)
         {
             listaArvore(noSelecionado->filha[i]);
             printf("%d ", noSelecionado->chave[i + 1]);
+            printf("Altura do no: %d ", noSelecionado->altura);
         }
+        putchar('\n');
         listaArvore(noSelecionado->filha[i]);
     }
 }
@@ -151,13 +157,13 @@ int procura(NoArvB *noSelecionado, int chave)
     {
         for (i = 0; i < noSelecionado->nregs; i++)
         {
-            if (noSelecionado->chave[i + 1] == chave){
-                return 1;   
+            if (noSelecionado->chave[i + 1] == chave)
+            {
+                return 1;
             }
         }
     }
     return 0;
-
 }
 
 int main()
