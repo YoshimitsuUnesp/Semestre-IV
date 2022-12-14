@@ -22,7 +22,7 @@ void prencheTabela(unsigned char texto[], unsigned int tabela[])
 
     while (texto[i] != '\0')
     {
-        tabela[texto[i]]++;
+        tabela[texto[i]]++; // texto[i] esta retornando o valor da tabela ASCII do caractere
         i++;
     }
 }
@@ -42,7 +42,7 @@ void insereOrdenado(Lista *lista, Arvore *no)
     // Verificacao de lista vazia
     if (!lista->inicio)
         lista->inicio = no;
-    // Compara se o no deve ser o novo inicio
+    // Compara se o no deve ser o novo inicio, meio ou fim
     else if (no->freq < lista->inicio->freq)
     {
         no->prox = lista->inicio;
@@ -159,6 +159,7 @@ Arvore *criaArvore(Lista *lista)
 }
 
 // Retorna a altura da arvore
+// Necessario para criar o dicionario de strings
 int alturaArvore(Arvore *raiz)
 {
     int esq, dir;
@@ -167,7 +168,7 @@ int alturaArvore(Arvore *raiz)
         return -1;
     else
     {
-        esq = alturaArvore(raiz->esq) + 1;
+        esq = alturaArvore(raiz->esq) + 1; // +1 serve para ter espaco para guardar o fim da string
         dir = alturaArvore(raiz->dir) + 1;
 
         if (esq > dir)
@@ -254,7 +255,7 @@ char *decodifica(char texto[], Arvore *raiz)
         else
             aux = aux->dir;
 
-        if (aux->esq == NULL && aux->dir == NULL)
+        if (aux->esq == NULL && aux->dir == NULL) // No folha
         {
             temp[0] = aux->caracter;
             temp[1] = '\0';
@@ -269,12 +270,12 @@ char *decodifica(char texto[], Arvore *raiz)
 
 void compacta(char texto[], char *nomeArquivo)
 {
-    char huf[100] = {0};
+    char huf[100] = {0}; // Cria a variavel que vai receber o nome do arquivo .huf zerada
     strcpy(huf, nomeArquivo);
     strcat(huf, ".huf");
 
     // Bloco de 8 bits por caracter
-    int i = 0, j = 7;
+    int i = 0, j = 7, bytesEconomizados;
     unsigned char mascara, byte = 0;
     FILE *arquivo = fopen(huf, "a");
 
@@ -285,7 +286,7 @@ void compacta(char texto[], char *nomeArquivo)
             mascara = 1;
             if (texto[i] == '1')
             {
-                mascara = mascara << j;
+                mascara = mascara << j; // Operador de deslocamento bit a bit a esquerda
                 byte = byte | mascara;
             }
             j--;
@@ -301,7 +302,10 @@ void compacta(char texto[], char *nomeArquivo)
         }
         if (j != 7)
             fwrite(&byte, sizeof(unsigned char), 1, arquivo);
+        
         fclose(arquivo);
+        bytesEconomizados = tamanhoArquivo(nomeArquivo); - tamanhoArquivo(huf);
+        printf("Bytes economizados: %d\n", bytesEconomizados);
     }
     else
         printf("\nERRO: ARQUIVO INEXISTENTE!\nNao foi possivel compactar o arquivo!\n");
