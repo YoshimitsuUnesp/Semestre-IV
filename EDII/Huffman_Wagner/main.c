@@ -9,7 +9,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-// #include <windows.h>
+#include <windows.h>
 
 #define TAM 256
 
@@ -378,7 +378,7 @@ int main() {
     char *codificado, *decodificado;
 
     // retire ou comente a linha a seguir para executar no Linux
-    // SetConsoleOutputCP(65001);
+    SetConsoleOutputCP(65001);
 
     tam = descobrir_tamanho();
     printf("\nQuantidade: %d\n", tam);
