@@ -1,0 +1,196 @@
+\begin{frame}
+	\frametitle{Tempo de execução \textit{versus} complexidade}
+	\par Considerando a tabela abaixo vamos estimar o tempo \textbf{assintótico} de execução doos algoritmos representados.\newline
+	
+	\begin{center}
+		\begin{tabular}{|c|c|c|c|c|c|c|}
+			\hline
+			\rule[-1ex]{0pt}{2.5ex} Função de custo & \multicolumn{6}{c|}{Tamanho da entrada} \\
+			\hline
+			\rule[-1ex]{0pt}{2.5ex}  & 10 & 20 & 30 & 40 & 50 & 60 \\
+			\hline
+			\rule[-1ex]{0pt}{2.5ex} $n.\log n$ & 33 & 43 & 49 & 53 & 56 & 59 \\
+			\hline
+			\rule[-1ex]{0pt}{2.5ex} $n$ &  &  &  &  &  &  \\
+			\hline
+			\rule[-1ex]{0pt}{2.5ex} $n^2$ &  &  &  &  &  &  \\
+			\hline
+			\rule[-1ex]{0pt}{2.5ex} $n^3$ &  &  &  &  &  &  \\
+			\hline
+			\rule[-1ex]{0pt}{2.5ex} $n^5$ &  &  &  &  &  &  \\
+			\hline
+			\rule[-1ex]{0pt}{2.5ex} $2^n$ &  &  &  &  &  &  \\
+			\hline
+			\rule[-1ex]{0pt}{2.5ex} $3^n$ &  &  &  &  &  &  \\
+			\hline
+			\rule[-1ex]{0pt}{2.5ex} $n!$ &  &  &  &  &  &  \\
+			\hline
+		\end{tabular}
+	\end{center}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Notação "Ózão" (ou \textit{big O})}
+	\only<1>{
+		\par Na notação "Ózão" (ou \textit{big O}) se diz que uma função $f(x)$ domina assintoticamente uma função $g(n)$ quando existem constantes $c$ e $a$ tais que, para \textbf{qualquer} $n \geq a$ é verdadeiro que $c.f(n) \geq g(n)$.\newline
+		\par De outra forma podemos dizer que:\newline
+		
+		\begin{itemize}
+			\item $g(n) = O(f(n))$
+			\item $g(n)$ é da ordem no máximo $f(n)$
+			\item $g(n)$ é $O$ de $f(n)$
+			\item $g(n)$ é igual a $O$ de $f(n)$
+			\item $g(n)$ pertence a $O$ de $f(n)$
+			\item o tempo de execução $T(n)$ é $O$
+		\end{itemize}
+		
+		\par Ver o exemplo \textit{ordensDeComportamento.ipynb} no jupyter-lab.
+	}
+	\only<2>{
+		\par Sendo assim se pode dizer, \textbf{por exemplo}, que:
+		\begin{itemize}
+			\item $n = O(n^2)$
+			\item $n^2 = O(n^2)$
+			\item $\log{n} = O(n^2)$
+			\item $n.\log{n} = O(n^2)$
+		\end{itemize}
+	
+		\par Já que $g(n) \leq c.n^2$ para um certo valor de $c \geq a$.
+	}
+	\only<3>{
+		\par Existe um valor de $c$ para que $n^2+100n = O(n^2)$? \newline
+		\par Por exemplo, $c=100$ ou $c=150$ ou $c \geq 100$.
+		\begin{equation}
+			n^2+100n \leq c.n^2 \Longrightarrow n^2+100n \leq 100.n^2 \Longrightarrow \dfrac{100}{n} \leq 99 \qquad \forall n \geq 2
+		\end{equation}
+	}
+	\only<4>{
+		\framesubtitle{Algebra}
+		\begin{itemize}
+			\item $f(n) = O(f(n))$
+			\item $c.O(f(n)) = O(f(n))$, $c = constante$
+			\item $O(f(n)) + O(f(n)) = O(f(n))$
+			\item $O(O(f(n))) = O(f(n))$
+			\item $O(f(n)) + O(g(n)) = O(max(f(n),g(n)))$
+			\item $O(f(n)).O(g(n)) = O(f(n).g(n))$
+			\item $f(n).O(g(n)) = O(f(n).g(n))$
+		\end{itemize}
+	}
+	\only<5>{
+		\framesubtitle{Treinando}
+		\begin{enumerate}
+			\item $6n^4 + 12n^3 + 12 \qquad$ é $ O(n^4), O(n^5), O(n^6)$?
+			\item $3n^2 + 12n.\log{n} \qquad$ é $ O(n^2), O(n^5), O(n)$?
+			\item $5n^2 + n.\log{n} + 12 \qquad$ é $ O(n^2), O(n^5)$?
+			\item $\log{n} + 4 \qquad $ é $O(\log{n}), O(n)$?
+		\end{enumerate}
+	}
+\end{frame}
+\begin{frame}
+	\frametitle{Notação Ômega (ou $\Omega$)}
+	\only<1>{
+		\par Na notação "Ômega" (ou $\Omega$) se diz que uma função $f(x)$ \textbf{é dominada} assintoticamente por uma função $g(n)$ quando existem constantes $c$ e $a$ tais que, para \textbf{qualquer} $n \geq a$ é verdadeiro que $c.f(n) \leq g(n)$.\newline
+		\par De outra forma podemos dizer que:\newline
+		
+		\begin{itemize}
+			\item $g(n) = \Omega(f(n))$
+			\item $g(n)$ é da ordem no mínimo $f(n)$
+			\item $g(n)$ é $\Omega$ de $f(n)$
+			\item $g(n)$ é igual a $\Omega$ de $f(n)$
+			\item $g(n)$ pertence a $\Omega$ de $f(n)$
+			\item o tempo de execução $T(n)$ é $\Omega$
+		\end{itemize}
+		
+		\par Ver o exemplo \textit{ordensDeComportamento.ipynb} no jupyter-lab.
+	}
+	\only<2>{
+		\par Sendo assim se pode dizer, \textbf{por exemplo}, que:
+		\begin{itemize}
+			\item $n^2 = \Omega(\log{n})$
+			\item $n = \Omega(\log{n})$
+			\item $n^3 = \Omega(\log{n})$
+			\item $n! = \Omega(\log{n})$
+		\end{itemize}
+		
+		\par Já que $g(n) \geq c.\log{n}$ para um certo valor de $c \geq a$.
+	}
+	\only<3>{
+		\framesubtitle{Algebra}
+		\begin{itemize}
+			\item $f(n) = \Omega(f(n))$
+			\item $c.\Omega(f(n)) = \Omega(f(n))$, $c = constante$
+			\item $\Omega(f(n)) + \Omega(f(n)) = \Omega(f(n))$
+			\item $\Omega(\Omega(f(n))) = \Omega(f(n))$
+			\item $\Omega(f(n)) + \Omega(g(n)) = \Omega(max(f(n),g(n)))$
+			\item $\Omega(f(n)).\Omega(g(n)) = \Omega(f(n).g(n))$
+			\item $f(n).\Omega(g(n)) = \Omega(f(n).g(n))$
+		\end{itemize}
+	}
+	\only<4>{
+		\framesubtitle{Observações}
+		\par Na prática a notação $\Omega$ não é vista sozinha	em análises de algoritmos, pois é muito otimista.	
+	}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Notação "ozinho" (ou $o$)}
+	\only<1>{
+		\par Na notação "ozinho" (ou $o$) se diz que uma função $f(x)$ domina assintoticamente uma função $g(n)$ quando existem constantes $c$ e $a$ tais que, para \textbf{qualquer} $n \geq a$ é verdadeiro que $c.f(n) \leq g(n)$, além disso,  $f(n)$ \textbf{é de ordem superior} a $g(n)$.\newline
+		\par De outra forma podemos dizer que:\newline
+		
+		\begin{itemize}
+			\item $g(n) = o(f(n))$
+			\item $g(n)$ é de ordem menor que $f(n)$
+			\item $g(n)$ é $o$ de $f(n)$
+			\item $g(n)$ é igual a $o$ de $f(n)$
+			\item $g(n)$ pertence a $o$ de $f(n)$
+			\item o tempo de execução $T(n)$ é menor que $o$
+		\end{itemize}
+		
+		\par Ver o exemplo \textit{ordensDeComportamento.ipynb} no jupyter-lab.
+	}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Notação "omeguinha" (ou $\omega$)}
+	\only<1>{
+		\par Na notação "omeguinha" (ou $\omega$) se diz que uma função $f(x)$ \textbf{é dominada} assintoticamente por uma função $g(n)$ quando existem constantes $c$ e $a$ tais que, para \textbf{qualquer} $n \geq a$ é verdadeiro que $c.f(n) \leq g(n)$ , além disso,  $f(n)$ \textbf{é de ordem inferior} a $g(n)$.\newline.
+		\par De outra forma podemos dizer que:\newline
+		
+		\begin{itemize}
+			\item $g(n) = \omega(f(n))$
+			\item $g(n)$ é de ordem menor que $f(n)$
+			\item $g(n)$ é $\omega$ de $f(n)$
+			\item $g(n)$ é igual a $\omega$ de $f(n)$
+			\item $g(n)$ pertence a $\omega$ de $f(n)$
+			\item o tempo de execução $T(n)$ é menor que $\omega$
+		\end{itemize}
+		
+		\par Ver o exemplo \textit{ordensDeComportamento.ipynb} no jupyter-lab.
+	}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Notações $\omega$ e $o$}
+	\framesubtitle{Observações}
+	\par Na prática a notação $\omega$ é $o$ não são usadas sozinhas (isso quando são vistas) em análises de algoritmos, pois são muito imprecisas.	
+\end{frame}
+
+\begin{frame}
+	\frametitle{Notação "Theta" (ou $\theta$)}
+	\only<1>{
+		\par Na notação "Theta" (ou $\theta$) se diz que uma função $f(x)$ \textbf{restringe} a função $g(n)$ quando existem constantes $c_1$, $c_2$ e $a$ tais que, para \textbf{qualquer} $n \geq a$  é verdadeiro que $0 \leq c_1.g(n) \leq f(n) \leq c_2.g(n) \qquad \forall n \geq a$.\newline.
+		\par De outra forma podemos dizer que:\newline
+		
+		\begin{itemize}
+			\item $g(n) = \theta(f(n))$
+			\item $g(n)$ é de ordem $f(n)$
+			\item $g(n)$ é $\theta$ de $f(n)$
+			\item $g(n)$ é igual a $\theta$ de $f(n)$
+			\item $g(n)$ pertence a $\theta$ de $f(n)$
+			\item o tempo de execução $T(n)$ é menor que $\theta$
+		\end{itemize}
+		
+		\par Ver o exemplo \textit{ordensDeComportamento.ipynb} no jupyter-lab.
+	}
+\end{frame}

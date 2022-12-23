@@ -1,0 +1,17 @@
+Para encontrar a palavra:
+
+3 + n((3 + n (n (2 + n) + 3) + 1 + 3)) + 3
+
+3 + n((3 + n (2n + n*n + 3) + 1 + 3)) + 3
+
+3 + n(3 + 2n*n + n*n*n + 3n + 1 + 3) + 3
+
+3 + (3n + 2n*n*n + n*n*n*n + 3n*n + n + 3n) + 3
+
+n^4 + 2n^3 + 3n^2 + 7n + 6
+
+n^4 + 2n^3 + 3n^2 + 7n
+
+Se não encontrar a palavra, significa que irá percorrer toda a tabela ASCII à procura do caractere, então será:
+
+256(n^4 + 2n^3 + 3n^2 + 7n)

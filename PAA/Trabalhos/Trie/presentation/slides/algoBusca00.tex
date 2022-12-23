@@ -1,0 +1,26 @@
+\begin{frame}
+	\frametitle{Algoritmos de busca}
+	\par Agora que conhecemos uma boa parte dos métodos de ordenação é possível mergulhar nos algoritmos de busca, esses que são extensamente usados em aplicações como bancos de dados ou qualquer outra aplicação em que seja necessário encontrar alguma informação.
+\end{frame}
+
+\begin{frame}
+	\frametitle{Algoritmos de busca}
+	\framesubtitle{Busca linear}
+	\par Algoritmo simples: Itere sobre o vetor comparando item-a-item com o valor procurado. Se encontrar retorne sua posição, do contrário retorne -1.
+\end{frame}
+
+\begin{frame}
+	\frametitle{Algoritmos de busca}
+	\framesubtitle{Busca binária}
+	\par A busca binária, para que funcione bem, tem como requerimento um vetor ordenado representado como uma \textbf{grafo}, posto isso, o algoritmo recursivamente vai dividindo o vetor ao meio até que o item central seja o que está sendo procurado.
+\end{frame}
+
+\begin{frame}
+	\frametitle{Algoritmos de busca}
+	\framesubtitle{Busca binária - Exercício 0}
+	\par Implemente a busca binária.
+	\pause
+	\par \textbf{Resposta:}
+	\lstinputlisting[language=C++]{../codigo/algoritmoRecursivo04.cpp}
+\end{frame}
+

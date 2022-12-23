@@ -1,0 +1,172 @@
+
+\begin{frame}
+	\frametitle{Análise de problemas P / NP}
+	\par Inicialmente definiremos as classes de problemas P/NP para problemas de \textbf{decisão}, ou seja, problemas cujas respostas são \textbf{sim/não}
+	
+	\par No entanto, \textbf{pode ser} relativamente fácil converter um problema de otimização em um de decisão.
+	
+	\par \textbf{Por exemplo}:
+	\par \textit{Existe um caminho de distância $K$ entre dois pontos de um grafo?} A resposta será sim ou não. \newline
+	\par De forma mais genérica: Existe uma solução que satisfaz uma certa propriedade?\newline
+	\par \textbf{No entanto} podemos estimar um valor para $K$ e ir perguntando ao algoritmo que, caso responda \textbf{não}, poderá responder sim para $K + j$ ou $K -j$ tal que $j$ seja um valor que faça com que exista uma solução. A forma de encontrar esse $j$ pode variar de acordo com a situação. Ou seja, associado a um problema de decisão pode estar vinculado um problema de \textbf{otimização}.
+\end{frame}
+
+\begin{frame}
+	\frametitle{Análise de problemas P / NP}
+	\framesubtitle{Algoritmos polinomiais}
+	\par Algoritmos polinomiais são aqueles que podem ter seu \textbf{tempo representado na forma de um polinômio} de grau qualquer, basicamente quase todos os que vimos até agora,  por outro lado, algoritmos não polinomiais são aqueles cuja a representação é dada, por exemplo, por funções exponenciais.\newline
+	\par A verdade é que não se pode ter \textbf{total certeza} que um algoritmo é não polinomial pois pode ser que, para um determinado problema, exista uma solução polinomial portanto, o que se pode afirmar é que \textbf{até o momento} se sabe que a solução desses problemas tem algoritmos de tempo não polinomial. 
+\end{frame}
+
+\begin{frame}
+	\frametitle{Análise de problema P / NP}
+	\framesubtitle{Algoritmos polinomiais}
+	\par Dizemos que um algoritmo resolve um dado problema se, ao receber uma entrada do problema, devolve uma solução ou informa que não há solução.
+	\par Se diz que um algoritmo é \textbf{razoavelmente rápido} quando o mesmo \textbf{tem um tempo polinomial}.
+	\par Um algoritmo é polinomial se \textbf{o pior caso} do mesmo for algo como $O(n^i) \forall i \in  \mathbb{N}$
+	\par Exemplos:
+	\begin{itemize}
+		\item $10n^3+3n^2+1 \implies O(n^3)$
+		\item $n^5.\log n \leq n^6 \implies o(n^6)$
+	\end{itemize}
+	\par É importante separar os algoritmos polinomiais dos não polinomiais pois polinômios tem algumas características interessantes como fechamento em \textbf{adição, multiplicação e composição} que, quando aplicadas \textbf{não mudam} a natureza polinomial do tempo do algoritmo.
+\end{frame}
+
+\begin{frame}
+	\frametitle{Análise de problemas P / NP}
+	\framesubtitle{Algoritmos \textbf{não} polinomiais}
+	\par São todos aqueles que consomem um tempo \textbf{não polinomial} como, por exemplo, $e^n$, $n!$, $2^n$, etc.
+	\par Geralmente a resolução desses problemas é custosa e se dá pela estratégia da \textbf{força bruta}. É verdade que, ainda assim, é possível economizar alguns ciclos de processamento usando uma \textbf{árvore de estados} mas isso não muda o tempo assintótico do algoritmo.
+\end{frame}
+
+\begin{frame}
+	\frametitle{Análise de problemas P / NP}
+	\framesubtitle{A classe P de problemas}
+	\par A classe $P$ de problemas compreende todos os algoritmos que podem ser executados em um tempo polinomial, \textbf{o fato de ainda não se ter encontrado um algoritmo polinomial para um problema não garante \textit{definitivamente} que a natureza do problema seja não polinomial}.
+\end{frame}
+
+\begin{frame}
+	\frametitle{Análise de problemas P / NP}
+	\framesubtitle{O problema da satisfazibilidade  (S.A. Cook, L.A. Levin, 1973)}
+	\par Dada uma fórmula booleana na forma normal \textbf{conjuntiva} ou \textbf{disjuntiva}. Existem valores para $x_1,x_2,x_3, \dots x_n$ que resultam em \textbf{Verdadeiro} para essa fórmula?
+	\par Exemplos de instâncias:
+	\begin{enumerate}
+		\item conjuntiva: $(x_1 \vee \neg x_2)\wedge(x_1 \vee x_3)\wedge(\neg x_1 \vee x_2)$ \label{enum:conj}
+		\item disjuntiva: $(x_1 \wedge \neg x_2)\vee(x_1 \wedge x_3)\vee(\neg x_1 \wedge x_2)$\label{enum:disjun}
+	\end{enumerate}
+	\par À \textbf{solução} dessa fórmula daremos o nome de \textbf{certificado}.
+	\par O \textbf{certificado} garante que, dado o problema, teremos a resposta \textbf{sim}. De outra forma: O certificado é a \textbf{prova} de que a resposta sim é verdadeira.
+	\par Para o exemplo \ref{enum:conj} o certificado é $x_1=Verdadeiro, x_2=Verdadeiro$\newline
+	
+	\par \textbf{Pergunta}: Existe um \textbf{certificado} para o problema \ref{enum:disjun}? Qual?
+	
+	\par Considerando o problema da satisfazibilidade entremos no campo dos problemas \textbf{NP}. Mais especificamente \textbf{NP-completo}.
+\end{frame}
+
+\begin{frame}
+	\frametitle{Análise de problemas P / NP}
+	\framesubtitle{A classe NP de problemas}
+	\par A classe $NP$ é aquela dos algoritmos não polinomiais certo? \textbf{Errado!}
+	\par \textbf{NP} é um acrônimo para \textit{Non-deterministic polynomial time}, ou seja, é uma classe de problemas cuja validade de um certificado pode ser avaliada em tempo \textbf{polinomial} e cuja a solução pode ser obtida em tempo polinomial usando um sistema de computação \textbf{hipotético} não determinístico (o que se aproxima mais disso são os atuais computadores quânticos).
+	\par De outra forma: Dada uma solução hipotética para um problema NP é rápido e fácil (tempo polinomial) verificar se aquela solução é \textbf{verdadeira}. Já, descobrir uma solução para o problema, bom... aí é outra estória pois esse tipo de problema \textbf{não tem algoritmos conhecidos} cujo tempo de geração de um certificado seja polinomial.
+	\par Daí tiramos que $P \subset NP$.
+	\par Obs: \textbf{Não se sabe} se $P = NP$ ou não, quem conseguir provar isso (que $P = NP$ ou  $P \neq NP$) revolucionará a área da computação.	
+\end{frame}
+
+\begin{frame}
+	\frametitle{Análise de problemas P / NP}
+	\framesubtitle{A classe NP de problemas}
+	\par Considerando que qualquer problema que possa, de alguma forma, ser transformado no problema da satisfazibilidade ou em qualquer outro problema NP \textbf{também é NP}, afim de provar que $P=NP$ ou $P \neq NP$ basta provar isso para \textbf{um} único problema $NP$!
+	\newline
+	\par A página do professor \textit{Paulo Feofiloff} tem muitos exemplos:
+	\href{https://www.ime.usp.br/~pf/analise_de_algoritmos/aulas/NPcompleto.html}{https://www.ime.usp.br/\texttildelow pf/analise\_de\_algoritmos/aulas/NPcompleto.html} 
+\end{frame}
+
+\begin{frame}
+	\frametitle{Análise de problemas P / NP}
+	\framesubtitle{Redução polinomial}
+	\par Da definição anterior tiramos que: Seja $A$ um problema e $B$ outro cuja solução é conhecida. Se a conversão de $A$ para $B$ é possível então solucionar $A$ também o será.
+	\par Ao procedimento descrito acima damos o nome de redução polinomial de $A$ para $B$ ou $A \preceq B$ (lê-se A é redutível a B) onde $B$ é um algoritmo polinomial
+	\par É importante dizer que $B\subseteq A$ e $B$ pode ser chamado múltiplas vezes em $A$.\newline
+	
+	\par \textbf{Exemplo}: \textit{Selecione o enésimo termo de uma sequência numérica randômica.}
+	\par Tal problema pode ser reduzido a uma de ordenação seguida de uns poucos comandos.	
+	
+	\par Sendo assim, suponha que $A \preceq B$ então:
+	\begin{itemize}
+		\item se $B \in P \implies A \in P$
+		\item se $B \preceq C \implies A \preceq C$
+		\item se $B \in P \implies A \in P$
+		\item se $B \in NP$ \textbf{talvez} haja uma solução de $A \in P$ que não use $B$.
+		\item se $A$ não tem solução polinomial e $A \preceq B / B \in NP \implies A \in NP$
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Análise de problemas P / NP}
+	\framesubtitle{Redução polinomial - NP-completo}
+	\par \textbf{Então} se $\mathbf{NP-completo} \subset NP, A \in NP, B \preceq A \forall B \in NP \implies A \in \mathbf{NP-completo}$\newline
+	\par Embora NP (e NP-completo) de tenha como domínio os problemas de decisão, \textbf{como ja vimos} existe uma correlação entre problemas de otimização e de decisão que garante que o problema de decisão correspondente ao de otimização deve ser pelo menos \textbf{não mais difícil} que o de otimização. 
+	\par De outra forma: Se um problema de otimização é polinomial sua respectiva decisão também o será, \textbf{o inverso não é necessariamente verdade}.
+	
+	\par \textbf{Finalmente} problemas NP-completos são aqueles que podem de alguma forma serem reduzidos ao problema da satisfazibilidade (meh...)
+\end{frame}
+
+\begin{frame}
+	\frametitle{Análise de problemas P / NP}
+	\framesubtitle{Exercício 0}
+	\par Crie um programa que:
+	\begin{itemize}
+		\item verifique se um número é primo ou não
+		\item gere o enésimo numero primo dado um valor de $n$
+	\end{itemize}
+	\par \textbf{Determine o tempo de execução de ambos}
+	\par \textbf{Algum dos dois é NP?}
+	\par \textbf{Qual a relação entre eles?}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Análise de problemas P / NP}
+	\framesubtitle{Exercício 1}
+	\begin{itemize}
+		\item Determine um circuito hamiltoniano de custo mínimo.
+		\item Dado um valor $L$ existe um circuito de custo $L$?
+	\end{itemize}
+	\par \textbf{Determine o tempo de execução de ambos}
+	\par \textbf{Algum dos dois é NP?}
+	\par \textbf{Qual a relação entre eles?}\newline
+	
+	\par Um \textit{circuito hamiltoniano} é um circuito/ciclo cujos elementos não se repetem.
+\end{frame}
+
+\begin{frame}
+	\frametitle{Análise de problemas P / NP}
+	\framesubtitle{Exercício 2}
+	\begin{itemize}
+		\item Determine quantas cliques com 2 e 3 elementos um certo grafo pode ter.
+		\item Dado uma quantidade e elementos $k$ existe um clique com $k$ elementos?
+	\end{itemize}
+	\par \textbf{Determine o tempo de execução de ambos}
+	\par \textbf{Algum dos dois é NP?}
+	\par \textbf{Qual a relação entre eles?}\newline
+	
+	\par Uma \textit{clique} é um subgrafo completo.
+\end{frame}
+
+\begin{frame}
+	\frametitle{Análise de problemas P / NP}
+	\framesubtitle{Exercício 3}
+	\begin{itemize}
+		\item Dado um grafo o mesmo é euleriano?
+	\end{itemize}
+	\par \textbf{Determine o tempo de execução}
+	\par \textbf{Esse algoritmo é NP?}\newline
+	
+	\par Um grafo euleriano é aquele em que é possível percorrer todas as arestas do mesmo podendo apenas repetir os vértices. Grafos eulerianos tem todos os vértices com grau par.
+\end{frame}
+
+\begin{frame}
+	\frametitle{Análise de problemas P / NP}
+	\framesubtitle{Exercício 4}
+	\par Considere $S \subseteq \mathbb{Z} / k \in S, |S| = n, n \in \mathbb{N}$, ou seja, $S$ é subconjunto de $\mathbb{Z}$ e a quantidade de elementos de $S$ é igual a um $n$ qualquer natural, então: Existe $\sum_{i \in S} k_i = \sum_{i \notin S} k_i$?
+\end{frame}

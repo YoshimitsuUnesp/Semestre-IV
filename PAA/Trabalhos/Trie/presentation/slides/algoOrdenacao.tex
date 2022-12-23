@@ -1,0 +1,102 @@
+\begin{frame}
+	\frametitle{Algorítimos de ordenação}
+	\framesubtitle{Utilidade}
+	\par Analisar algoritmos de ordenação são uma ótima forma de entender e analisar vários outros algoritmos devido a natureza dos problemas, além, é claro, de serem diretamente utilizados em aplicações como banco de dados e localização de padrões.\newline
+	
+	\par Os algoritmos que teremos contato a partir de agora serão mais complexos de se analisar pois, nem sempre coisas como a relação de recorrência estarão trivialmente definidos.
+\end{frame}
+
+\begin{frame}
+	\frametitle{Algorítimos de ordenação - baseados em troca}
+	\begin{itemize}
+		\item \textbf{Burbble-sort} - método do borbulhação
+		\item \textbf{Quick-sort} - ordenação por troca de partição
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Algorítimos de ordenação - baseados em troca}
+	\framesubtitle{Burbble-sort}
+	\par Esse algoritmo percorre várias vezes o vetor de dados a cada iteração comparando cada um de seus elementos com o próximo, sendo que,  se o próximo é menor do que o anterior há uma troca de lugares entre os dois.
+	\lstinputlisting[language=C++]{../codigo/burbblesort.cpp}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Algorítimos de ordenação - baseados em troca}
+	\framesubtitle{Exercício 0}
+	\par Determine o tempo de execução do \textit{burbble-sort} com seus respectivos melhores e piores tempos se houverem. Use a notação que melhor se encaixa à situação.
+	\pause
+	\par \textbf{Resposta}: $O(n^2)$.
+\end{frame}
+
+\begin{frame}
+	\frametitle{Algorítimos de ordenação - baseados em troca}
+	\framesubtitle{Quick-sort}
+	\par A ideia usada é \textbf{dividir para conquistar}, o vetor é dividido em outros dois menores que são ordenados independentemente para depois serem combinados produzindo assim o resultado final. Tal separação é feita usando-se um \textbf{elemento pivô}, dessa forma, todos os elementos a esquerda do pivô são menores do que ele e todos elementos a direita são maiores que o mesmo
+	\par Primeiro passo:
+	\begin{itemize}
+		\item determinar o elemento pivô: Isso pode ser feito de várias formas, localizar a mediana, fazer uma média entre elementos, etc. 
+		\item ordenar os sub-vetores de forma que os elementos a esquerda do pivô são menores que o mesmo e os elementos a direita são maiores.
+		\item percorrer simultaneamente o vetor da esquerda para direita, e da direita para esquerda comparando os respectivos elementos e trocando de posição quando necessário.
+		\item quando os ponteiros da esquerda e da direita se cruzarem a troca é finalizada.		
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Algorítimos de ordenação - baseados em troca}
+	\framesubtitle{Quick-sort}
+	
+	\par Segundo passo
+	\par Ordenar os sub-vetores abaixo e acima do elemento pivô. 
+	
+	\par Vamos escolher como pivô o elemento $25$.
+	
+	\par Agora caminhamos com o ponteiro \textbf{menor} para a direita até que encontremos um valor \textbf{maior que o pivô}. 
+	
+	\par Simultaneamente caminhamos com o ponteiro \textbf{maior} para a esquerda até que encontremos um valor \textbf{menor que o pivô}.\newline
+	
+	\par $\underset{\underset{menor \rightarrow}{\uparrow}}{\mathbf{25}}, 57, 48, 37, 12, 86, 92, \underset{\underset{\leftarrow maior}{\uparrow}}{\mathbf{33}}$ \newline
+	
+	\par 25, $\underset{\underset{menor \rightarrow}{\uparrow}}{\mathbf{57}}, 48, 37, \underset{\underset{\leftarrow maior}{\uparrow}}{\mathbf{12}} 86, 92, 33 $
+\end{frame}
+
+\begin{frame}
+	\frametitle{Algorítimos de ordenação - baseados em troca}
+	\framesubtitle{Quick-sort}
+	
+	\par 25, $\underset{\underset{menor \rightarrow}{\uparrow}}{\mathbf{57}}, 48, 37, \underset{\underset{\leftarrow maior}{\uparrow}}{\mathbf{12}} 86, 92, 33 $\newline
+	
+	\par Permuta-se os elementos apontados por \textbf{menor} e \textbf{maior}:
+	\par 25, $\underset{\underset{menor \rightarrow}{\uparrow}}{\mathbf{12}}, 48, 37, \underset{\underset{\leftarrow maior}{\uparrow}}{\mathbf{57}} 86, 92, 33 $\newline
+	
+	\par \textbf{Até que} os ponteiros maior e menor \textbf{se cruzem}, assim, o ponteiro \textbf{maior} indica onde se permutar o pivô pelo valor apontado.
+	\par 25, $\underset{\underset{\leftarrow maior}{\uparrow}}{\mathbf{12}}$, $\underset{\underset{menor \rightarrow}{\uparrow}}{\mathbf{48}}, 37, 57, 86, 92, 33 $
+\end{frame}
+
+\begin{frame}
+	\frametitle{Algorítimos de ordenação - baseados em troca}
+	\framesubtitle{Quick-sort}
+	
+	\par \textbf{Até que} os ponteiros maior e menor \textbf{se cruzem}, assim, o ponteiro \textbf{maior} indica onde se permutar o pivô pelo valor apontado.
+	\par 25, $\underset{\underset{\leftarrow maior}{\uparrow}}{\mathbf{12}}$, $\underset{\underset{menor \rightarrow}{\uparrow}}{\mathbf{48}}, 37, 57, 86, 92, 33 $\newline
+	
+	\par 12, $\underset{\underset{\leftarrow maior}{\uparrow}}{\mathbf{25}}$, $\underset{\underset{menor \rightarrow}{\uparrow}}{\mathbf{48}}, 37, 57, 86, 92, 33 $\newline
+	
+	\par Agora \textbf{divide-se} o vetor em dois pedaços segundo a \textbf{localização do pivô}:
+	\par $\underset{\underset{sub-vetor0}{\uparrow}}{\{12\}}$ $\underset{\underset{pivo}{\uparrow}}{(25)}$ $\underset{\underset{sub-vetor1}{\uparrow}}{\{48, 37, 57, 86, 92, 33\}} $\newline
+		
+	\par Agora reinicia-se o processo \textbf{para cada sub-vetor}, caso um vetor vetor chegue no \textbf{caso base} contendo 1 elemento o consideramos ordenado, no caso de 2 elementos é possivel, usando uma comparação simples, permutar os elementos, se necessário.
+\end{frame}
+
+\begin{frame}
+	\frametitle{Algorítimos de ordenação - baseados em troca}
+	\framesubtitle{Exercício 1}
+	\par Implemente o \textit{quick-sort}.
+	\par Determine o tempo de execução do \textit{Quick-sort} com seus respectivos melhores e piores tempos se houverem. Use a notação que melhor se encaixa à situação.
+	\pause
+	\par \textbf{Resposta}: No melhor caso as partiçoes são quebradas ao meio, no pior (vetor ordenado) o pivô quebra o vetor no seu início. $\Omega(n.\log n), O(n^2)$.
+	\lstinputlisting[language=C++]{../codigo/quicksort.cpp}
+\end{frame}
+
+
+

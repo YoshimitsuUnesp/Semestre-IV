@@ -1,0 +1,134 @@
+\begin{frame}
+	\frametitle{Algoritmos de ordenação - baseados em inserção}
+	\par Os algoritmos por inserção trabalham de forma análoga a um conjunto de cartas de baralho, essas que são seguradas na mão, a princípio, estão desordenadas, o papel do algoritmo é retirar uma ou mais cartas de suas posições originais e colocar-las na posição correta de forma a configurar uma certa ordem.\newline
+	\par $10, 25, 40, 50, \underset{\underset{foraDeOrdem}{\uparrow}}{\mathbf{12}}, 80, 2, 23, \dots $ \newline
+	\par $10, \underset{\underset{emOrdem}{\uparrow}}{\mathbf{12}}, 25, 40, 50, 80, 2, 23, \dots $ \newline
+	
+	\par Perceba que o número $12$ foi \textbf{inserido} entre $10$ e $25$. 
+\end{frame}
+
+\begin{frame}
+	\frametitle{Algoritmos de ordenação - baseados em inserção}
+	\begin{itemize}
+		\item \textbf{Inserção simples}
+		\item \textbf{Shell-sort}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Algoritmos de ordenação - baseados em inserção}
+	\framesubtitle{Insertion-Sort}
+	\par Algoritmo \textbf{Insertion-Sort} segue exatamente a ideia demonstrada no início desta seção, é um algoritmo que retira valores de um local e os coloca em outro deslocando, se necessário, todos os outros elementos do vetor. 
+	\lstinputlisting[language=C++]{../codigo/insercaoSimples.cpp}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Algoritmos de ordenação - baseados em inserção}
+	\framesubtitle{Exercício 0}
+	\par Determine o tempo de execução do \textit{algoritmo de inserção simples} com seus respectivos melhores e piores tempos se houverem. Use a notação que melhor se encaixa à situação.
+	\pause
+	\par \textbf{Resposta}:
+	\par $\Omega(n)$ para o vetor ordenado, $O(n^2)$ para o vetor ordenado de forma decrescente.
+\end{frame}
+
+\begin{frame}
+	\frametitle{Algoritmos de ordenação - baseados em inserção}
+	\framesubtitle{Shell-Sort}
+	\par O Shell-Sort é uma evolução do algoritmo anterior, avaliando a inserção simples nota-se que o melhor caso é quando o vetor já está ordenado, sendo assim, o Shell-Sort adota a estratégia de \textbf{dividir para conquistar} subdividindo o vetor em vários pares de valores usando "saltos" que vão diminuindo em quantidade com o tempo de forma que fica cada vez mais \textbf{provável} que o vetor já esteja ordenado, diminuindo assim o tempo total de execução.\newline
+	\par No exemplo abaixo, mostro um exemplo com passo $k=5$:
+
+	\par $
+	\apontar{par0}{\textcolor{blue}{55}}, 
+	\apontar{par1}{\textcolor{yellow}{33}}, 
+	\apontar{par2}{\textcolor{red}{12}},  
+	\apontar{par3}{\textcolor{gray}{01}}, 
+	\apontar{par0}{\textcolor{blue}{19}}, 
+	\apontar{par1}{\textcolor{yellow}{10}},
+	\apontar{par2}{\textcolor{red}{70}}, 
+	\apontar{par3}{\textcolor{gray}{25}} 
+	$
+\end{frame}
+
+\begin{frame}
+	\frametitle{Algoritmos de ordenação - baseados em inserção}
+	\framesubtitle{Shell-Sort}
+	\par $
+	\apontar{par0}{\textcolor{blue}{55}}, 
+	\apontar{par1}{\textcolor{yellow}{33}}, 
+	\apontar{par2}{\textcolor{red}{12}},  
+	\apontar{par3}{\textcolor{gray}{01}}, 
+	\apontar{par0}{\textcolor{blue}{19}}, 
+	\apontar{par1}{\textcolor{yellow}{10}},
+	\apontar{par2}{\textcolor{red}{70}}, 
+	\apontar{par3}{\textcolor{gray}{25}}
+	$ \newline
+	\par $
+	\apontar{par0}{\textcolor{blue}{19}}, 
+	\apontar{par1}{\textcolor{yellow}{10}}, 
+	\apontar{par2}{\textcolor{red}{12}},  
+	\apontar{par3}{\textcolor{gray}{01}}, 
+	\apontar{par0}{\textcolor{blue}{55}}, 
+	\apontar{par1}{\textcolor{yellow}{33}},
+	\apontar{par2}{\textcolor{red}{70}}, 
+	\apontar{par3}{\textcolor{gray}{25}}
+	\leftarrow $ Primeira passada $k=5$ \newline
+	\pause
+	\par $
+	\apontar{par0}{\textcolor{blue}{19}}, 
+	\apontar{par1}{\textcolor{yellow}{10}}, 
+	\apontar{par2}{\textcolor{red}{12}},  
+	\apontar{par0}{\textcolor{blue}{01}}, 
+	\apontar{par1}{\textcolor{yellow}{55}}, 
+	\apontar{par2}{\textcolor{red}{33}},
+	\apontar{par0}{\textcolor{blue}{70}}, 
+	\apontar{par1}{\textcolor{yellow}{25}}
+	$ \newline
+	
+	\par $
+	\apontar{par0}{\textcolor{blue}{01}}, 
+	\apontar{par1}{\textcolor{yellow}{10}}, 
+	\apontar{par2}{\textcolor{red}{12}},  
+	\apontar{par0}{\textcolor{blue}{19}}, 
+	\apontar{par1}{\textcolor{yellow}{25}}, 
+	\apontar{par2}{\textcolor{red}{33}},
+	\apontar{par0}{\textcolor{blue}{70}}, 
+	\apontar{par1}{\textcolor{yellow}{55}}
+	\leftarrow$ Segunda passada $k=4$ \newline
+	\pause
+	\par $
+	\apontar{par0}{\textcolor{blue}{01}}, 
+	\apontar{par1}{\textcolor{yellow}{10}}, 
+	\apontar{par0}{\textcolor{blue}{12}},  
+	\apontar{par1}{\textcolor{yellow}{19}}, 
+	\apontar{par0}{\textcolor{blue}{25}}, 
+	\apontar{par1}{\textcolor{yellow}{33}},
+	\apontar{par0}{\textcolor{blue}{70}}, 
+	\apontar{par1}{\textcolor{yellow}{55}}
+	$ \newline
+	
+	\par $
+	\apontar{par0}{\textcolor{blue}{01}}, 
+	\apontar{par1}{\textcolor{yellow}{10}}, 
+	\apontar{par0}{\textcolor{blue}{12}},  
+	\apontar{par1}{\textcolor{yellow}{19}}, 
+	\apontar{par0}{\textcolor{blue}{25}}, 
+	\apontar{par1}{\textcolor{yellow}{33}},
+	\apontar{par0}{\textcolor{blue}{70}}, 
+	\apontar{par1}{\textcolor{yellow}{55}}
+	\leftarrow$ Terceira passada $k=2$
+\end{frame}
+
+\begin{frame}
+	\frametitle{Algoritmos de ordenação - baseados em inserção}
+	\framesubtitle{Shell-Sort}
+	
+	\par Quando $k=1$ (1 partição = todo o vetor) aplica-se então o algoritmo de inserção simples! 
+	\lstinputlisting[language=C++]{../codigo/shellSort.cpp}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Algoritmos de ordenação - baseados em inserção}
+	\framesubtitle{Pesquisa}
+	\par Determine o tempo de execução do \textit{Shell-Sort} com seus respectivos melhores e piores tempos se houverem. Use a notação que melhor se encaixa à situação. Como o tamanho das partições muda o tempo do algoritmo? \textbf{Indique as referências}.
+\end{frame}
+

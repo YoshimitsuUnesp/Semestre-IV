@@ -1,0 +1,798 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="134.80191mm"
+   height="58.912701mm"
+   viewBox="0 0 134.80191 58.912699"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
+   sodipodi:docname="AVLs.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:zoom="0.69664703"
+     inkscape:cx="593.5574"
+     inkscape:cy="-147.13333"
+     inkscape:window-width="1920"
+     inkscape:window-height="1016"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Camada 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(51.720589,-187.47212)">
+    <g
+       id="Segundo plano"
+       transform="matrix(0.26458333,0,0,0.26458333,-120.20992,57.51466)">
+      <g
+         id="g15">
+        <ellipse
+           style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-opacity:1"
+           cx="487.73099"
+           cy="241.67999"
+           rx="34.134602"
+           ry="17.067301"
+           id="ellipse9" />
+        <text
+           font-size="12.7998px"
+           style="font-style:normal;font-weight:normal;font-family:sans-serif;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none"
+           x="487.73099"
+           y="243.92999"
+           id="text13"><tspan
+             x="487.73099"
+             y="243.92999"
+             id="tspan11" /></text>
+      </g>
+      <g
+         id="g23">
+        <ellipse
+           style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-opacity:1"
+           cx="572.245"
+           cy="346.914"
+           rx="34.134602"
+           ry="17.067301"
+           id="ellipse17" />
+        <text
+           font-size="12.7998px"
+           style="font-style:normal;font-weight:normal;font-family:sans-serif;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none"
+           x="572.245"
+           y="349.164"
+           id="text21"><tspan
+             x="572.245"
+             y="349.164"
+             id="tspan19" /></text>
+      </g>
+      <g
+         id="g31">
+        <ellipse
+           style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-opacity:1"
+           cx="414.12201"
+           cy="342.552"
+           rx="34.134602"
+           ry="17.067301"
+           id="ellipse25" />
+        <text
+           font-size="12.7998px"
+           style="font-style:normal;font-weight:normal;font-family:sans-serif;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none"
+           x="414.12201"
+           y="344.802"
+           id="text29"><tspan
+             x="414.12201"
+             y="344.802"
+             id="tspan27" /></text>
+      </g>
+      <line
+         style="fill:none;stroke:#000000;stroke-width:2;stroke-opacity:1"
+         x1="426.37799"
+         y1="325.75601"
+         x2="475.474"
+         y2="258.47601"
+         id="line33" />
+      <line
+         style="fill:none;stroke:#000000;stroke-width:2;stroke-opacity:1"
+         x1="501.07001"
+         y1="258.29001"
+         x2="558.90503"
+         y2="330.30399"
+         id="line35" />
+    </g>
+    <g
+       id="Segundo plano-3"
+       transform="matrix(0.26458333,0,0,0.26458333,-158.37706,6.7110887)">
+      <g
+         id="g65">
+        <ellipse
+           style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-opacity:1"
+           cx="769.16699"
+           cy="281.099"
+           rx="34.134602"
+           ry="17.067301"
+           id="ellipse59" />
+        <text
+           font-size="12.7998px"
+           style="font-style:normal;font-weight:normal;font-family:sans-serif;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none"
+           x="769.16699"
+           y="283.349"
+           id="text63"><tspan
+             x="769.16699"
+             y="283.349"
+             id="tspan61" /></text>
+      </g>
+      <g
+         id="g73">
+        <ellipse
+           style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-opacity:1"
+           cx="853.68103"
+           cy="386.33301"
+           rx="34.134602"
+           ry="17.067301"
+           id="ellipse67" />
+        <text
+           font-size="12.7998px"
+           style="font-style:normal;font-weight:normal;font-family:sans-serif;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none"
+           x="853.68103"
+           y="388.58301"
+           id="text71"><tspan
+             x="853.68103"
+             y="388.58301"
+             id="tspan69" /></text>
+      </g>
+      <line
+         style="fill:none;stroke:#000000;stroke-width:2;stroke-opacity:1"
+         x1="782.50598"
+         y1="297.70901"
+         x2="840.34198"
+         y2="369.72299"
+         id="line75" />
+    </g>
+    <g
+       id="Segundo plano-6"
+       transform="matrix(0.26458333,0,0,0.26458333,-9.8653796,-72.701001)">
+      <g
+         id="g100">
+        <ellipse
+           style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-opacity:1"
+           cx="462.189"
+           cy="416.32199"
+           rx="34.134602"
+           ry="17.067301"
+           id="ellipse94" />
+        <text
+           font-size="12.7998px"
+           style="font-style:normal;font-weight:normal;font-family:sans-serif;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none"
+           x="462.189"
+           y="418.57199"
+           id="text98"><tspan
+             x="462.189"
+             y="418.57199"
+             id="tspan96" /></text>
+      </g>
+      <g
+         id="g108">
+        <ellipse
+           style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-opacity:1"
+           cx="546.70398"
+           cy="521.55603"
+           rx="34.134602"
+           ry="17.067301"
+           id="ellipse102" />
+        <text
+           font-size="12.7998px"
+           style="font-style:normal;font-weight:normal;font-family:sans-serif;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none"
+           x="546.70398"
+           y="523.80603"
+           id="text106"><tspan
+             x="546.70398"
+             y="523.80603"
+             id="tspan104" /></text>
+      </g>
+      <line
+         style="fill:none;stroke:#000000;stroke-width:2;stroke-opacity:1"
+         x1="475.52899"
+         y1="432.93201"
+         x2="533.36401"
+         y2="504.94601"
+         id="line110" />
+      <g
+         id="g118">
+        <ellipse
+           style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-opacity:1"
+           cx="472.004"
+           cy="597.61902"
+           rx="34.134602"
+           ry="17.067301"
+           id="ellipse112" />
+        <text
+           font-size="12.7998px"
+           style="font-style:normal;font-weight:normal;font-family:sans-serif;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none"
+           x="472.004"
+           y="599.86902"
+           id="text116"><tspan
+             x="472.004"
+             y="599.86902"
+             id="tspan114" /></text>
+      </g>
+      <line
+         style="fill:none;stroke:#000000;stroke-width:2;stroke-opacity:1"
+         x1="531.23798"
+         y1="537.30298"
+         x2="487.46899"
+         y2="581.87097"
+         id="line120" />
+    </g>
+    <rect
+       style="fill:#00ff00;fill-opacity:0.386961;stroke:#008000;stroke-width:0.965;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:3.86, 3.86;stroke-dashoffset:0.772"
+       id="rect317"
+       width="136.55573"
+       height="71.8377"
+       x="117.63185"
+       y="159.99335"
+       ry="16.985458" />
+    <rect
+       style="fill:#ff0000;fill-opacity:0.426825;stroke:#008000;stroke-width:0.965;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:3.86, 3.86;stroke-dashoffset:0.772"
+       id="rect319"
+       width="150.50432"
+       height="104.32654"
+       x="110.75269"
+       y="156.81877"
+       ry="16.985456" />
+    <text
+       xml:space="preserve"
+       style="font-size:10.5833px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;stroke-width:0.264583"
+       x="198.93428"
+       y="170.54025"
+       id="text7186"><tspan
+         sodipodi:role="line"
+         id="tspan7184"
+         style="stroke-width:0.264583"
+         x="198.93428"
+         y="170.54025">Cheia</tspan></text>
+    <g
+       id="Segundo plano-36"
+       transform="matrix(0.26458333,0,0,0.26458333,-129.24415,125.09489)">
+      <g
+         id="g52">
+        <ellipse
+           style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-opacity:1"
+           cx="1185.14"
+           cy="155.567"
+           rx="34.134602"
+           ry="17.067301"
+           id="ellipse46" />
+        <text
+           font-size="12.8px"
+           style="font-style:normal;font-weight:normal;font-family:sans-serif;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none"
+           x="1185.14"
+           y="157.817"
+           id="text50"><tspan
+             x="1185.14"
+             y="157.817"
+             id="tspan48" /></text>
+      </g>
+      <g
+         id="g60">
+        <ellipse
+           style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-opacity:1"
+           cx="1259.66"
+           cy="260.80099"
+           rx="34.134602"
+           ry="17.067301"
+           id="ellipse54" />
+        <text
+           font-size="12.8px"
+           style="font-style:normal;font-weight:normal;font-family:sans-serif;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none"
+           x="1259.66"
+           y="263.05099"
+           id="text58"><tspan
+             x="1259.66"
+             y="263.05099"
+             id="tspan56" /></text>
+      </g>
+      <g
+         id="g68">
+        <ellipse
+           style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-opacity:1"
+           cx="1101.53"
+           cy="256.439"
+           rx="34.134602"
+           ry="17.067301"
+           id="ellipse62" />
+        <text
+           font-size="12.8px"
+           style="font-style:normal;font-weight:normal;font-family:sans-serif;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none"
+           x="1101.53"
+           y="258.689"
+           id="text66"><tspan
+             x="1101.53"
+             y="258.689"
+             id="tspan64" /></text>
+      </g>
+      <line
+         style="fill:none;stroke:#000000;stroke-width:2;stroke-opacity:1"
+         x1="1114.9301"
+         y1="240.284"
+         x2="1171.75"
+         y2="171.72301"
+         id="line70" />
+      <line
+         style="fill:none;stroke:#000000;stroke-width:2;stroke-opacity:1"
+         x1="1197.1"
+         y1="172.44701"
+         x2="1247.71"
+         y2="243.922"
+         id="line72" />
+      <g
+         id="g80">
+        <ellipse
+           style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-opacity:1"
+           cx="966"
+           cy="486.5"
+           rx="34.134602"
+           ry="17.067301"
+           id="ellipse74" />
+        <text
+           font-size="12.7998px"
+           style="font-style:normal;font-weight:normal;font-family:sans-serif;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none"
+           x="966"
+           y="488.75"
+           id="text78"><tspan
+             x="966"
+             y="488.75"
+             id="tspan76" /></text>
+      </g>
+      <g
+         id="g88">
+        <ellipse
+           style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-opacity:1"
+           cx="1041"
+           cy="486.5"
+           rx="34.134602"
+           ry="17.067301"
+           id="ellipse82" />
+        <text
+           font-size="12.7998px"
+           style="font-style:normal;font-weight:normal;font-family:sans-serif;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none"
+           x="1041"
+           y="488.75"
+           id="text86"><tspan
+             x="1041"
+             y="488.75"
+             id="tspan84" /></text>
+      </g>
+      <g
+         id="g96">
+        <ellipse
+           style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-opacity:1"
+           cx="1116"
+           cy="486.5"
+           rx="34.134602"
+           ry="17.067301"
+           id="ellipse90" />
+        <text
+           font-size="12.7998px"
+           style="font-style:normal;font-weight:normal;font-family:sans-serif;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none"
+           x="1116"
+           y="488.75"
+           id="text94"><tspan
+             x="1116"
+             y="488.75"
+             id="tspan92" /></text>
+      </g>
+      <line
+         style="fill:none;stroke:#000000;stroke-width:2;stroke-opacity:1"
+         x1="1019.46"
+         y1="357.439"
+         x2="1088.08"
+         y2="273"
+         id="line98" />
+      <line
+         style="fill:none;stroke:#000000;stroke-width:2;stroke-opacity:1"
+         x1="1107.0601"
+         y1="274.24799"
+         x2="1132.48"
+         y2="356.19101"
+         id="line100" />
+      <line
+         style="fill:none;stroke:#000000;stroke-width:2;stroke-opacity:1"
+         x1="1261.3101"
+         y1="278.83401"
+         x2="1268.35"
+         y2="355.96701"
+         id="line102" />
+      <line
+         style="fill:none;stroke:#000000;stroke-width:2;stroke-opacity:1"
+         x1="1278.61"
+         y1="275.87"
+         x2="1383.05"
+         y2="358.931"
+         id="line104" />
+      <line
+         style="fill:none;stroke:#000000;stroke-width:2;stroke-opacity:1"
+         x1="999.68903"
+         y1="391.75"
+         x2="972.31097"
+         y2="468.75"
+         id="line106" />
+      <line
+         style="fill:none;stroke:#000000;stroke-width:2;stroke-opacity:1"
+         x1="1011.54"
+         y1="391.81201"
+         x2="1035.46"
+         y2="468.68799"
+         id="line108" />
+      <line
+         style="fill:none;stroke:#000000;stroke-width:2;stroke-opacity:1"
+         x1="1134.49"
+         y1="391.97"
+         x2="1119.51"
+         y2="468.53"
+         id="line110-7" />
+      <g
+         id="g118-5">
+        <ellipse
+           style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-opacity:1"
+           cx="1006"
+           cy="374"
+           rx="34.134602"
+           ry="17.067301"
+           id="ellipse112-3" />
+        <text
+           font-size="12.7998px"
+           style="font-style:normal;font-weight:normal;font-family:sans-serif;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none"
+           x="1006"
+           y="376.25"
+           id="text116-5"><tspan
+             x="1006"
+             y="376.25"
+             id="tspan114-6" /></text>
+      </g>
+      <g
+         id="g126">
+        <ellipse
+           style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-opacity:1"
+           cx="1138"
+           cy="374"
+           rx="34.134602"
+           ry="17.067301"
+           id="ellipse120" />
+        <text
+           font-size="12.7998px"
+           style="font-style:normal;font-weight:normal;font-family:sans-serif;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none"
+           x="1138"
+           y="376.25"
+           id="text124"><tspan
+             x="1138"
+             y="376.25"
+             id="tspan122" /></text>
+      </g>
+      <g
+         id="g134">
+        <ellipse
+           style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-opacity:1"
+           cx="1270"
+           cy="374"
+           rx="34.134602"
+           ry="17.067301"
+           id="ellipse128" />
+        <text
+           font-size="12.7998px"
+           style="font-style:normal;font-weight:normal;font-family:sans-serif;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none"
+           x="1270"
+           y="376.25"
+           id="text132"><tspan
+             x="1270"
+             y="376.25"
+             id="tspan130" /></text>
+      </g>
+      <g
+         id="g142">
+        <ellipse
+           style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-opacity:1"
+           cx="1402"
+           cy="374"
+           rx="34.134602"
+           ry="17.067301"
+           id="ellipse136" />
+        <text
+           font-size="12.7998px"
+           style="font-style:normal;font-weight:normal;font-family:sans-serif;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none"
+           x="1402"
+           y="376.25"
+           id="text140"><tspan
+             x="1402"
+             y="376.25"
+             id="tspan138" /></text>
+      </g>
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-size:10.5833px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;stroke-width:0.264583"
+       x="184.5515"
+       y="254.25043"
+       id="text10388"><tspan
+         sodipodi:role="line"
+         id="tspan10386"
+         style="stroke-width:0.264583"
+         x="184.5515"
+         y="254.25043">Completa</tspan></text>
+    <g
+       id="Segundo plano-5"
+       transform="matrix(0.26458333,0,0,0.26458333,-197.65919,25.19898)">
+      <g
+         id="g12412">
+        <ellipse
+           style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-opacity:1"
+           cx="806.67902"
+           cy="632.56702"
+           rx="36.502399"
+           ry="18.2512"
+           id="ellipse12406" />
+        <text
+           font-size="12.8px"
+           style="font-style:normal;font-weight:normal;font-family:sans-serif;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none"
+           x="806.67902"
+           y="634.81702"
+           id="text12410"><tspan
+             x="806.67902"
+             y="634.81702"
+             id="tspan12408">100</tspan></text>
+      </g>
+      <g
+         id="g12420">
+        <ellipse
+           style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-opacity:1"
+           cx="881.19299"
+           cy="690.80103"
+           rx="36.536499"
+           ry="18.2682"
+           id="ellipse12414" />
+        <text
+           font-size="12.8px"
+           style="font-style:normal;font-weight:normal;font-family:sans-serif;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none"
+           x="881.19299"
+           y="693.05103"
+           id="text12418"><tspan
+             x="881.19299"
+             y="693.05103"
+             id="tspan12416">150</tspan></text>
+      </g>
+      <g
+         id="g12428">
+        <ellipse
+           style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-opacity:1"
+           cx="723.06897"
+           cy="686.43903"
+           rx="34.956001"
+           ry="17.478001"
+           id="ellipse12422" />
+        <text
+           font-size="12.8px"
+           style="font-style:normal;font-weight:normal;font-family:sans-serif;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none"
+           x="723.06897"
+           y="688.68903"
+           id="text12426"><tspan
+             x="723.06897"
+             y="688.68903"
+             id="tspan12424">51</tspan></text>
+      </g>
+      <line
+         style="fill:none;stroke:#000000;stroke-width:2;stroke-opacity:1"
+         x1="745.34399"
+         y1="672.08698"
+         x2="783.46997"
+         y2="647.521"
+         id="line12430" />
+      <line
+         style="fill:none;stroke:#000000;stroke-width:2;stroke-opacity:1"
+         x1="827.13599"
+         y1="648.55499"
+         x2="860.72699"
+         y2="674.80701"
+         id="line12432" />
+      <g
+         id="g12440">
+        <ellipse
+           style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-opacity:1"
+           cx="587.53497"
+           cy="817.5"
+           rx="34.956001"
+           ry="17.478001"
+           id="ellipse12434" />
+        <text
+           font-size="12.7998px"
+           style="font-style:normal;font-weight:normal;font-family:sans-serif;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none"
+           x="587.53497"
+           y="819.75"
+           id="text12438"><tspan
+             x="587.53497"
+             y="819.75"
+             id="tspan12436">35</tspan></text>
+      </g>
+      <g
+         id="g12448">
+        <ellipse
+           style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-opacity:1"
+           cx="662.53497"
+           cy="817.5"
+           rx="34.956001"
+           ry="17.478001"
+           id="ellipse12442" />
+        <text
+           font-size="12.7998px"
+           style="font-style:normal;font-weight:normal;font-family:sans-serif;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none"
+           x="662.53497"
+           y="819.75"
+           id="text12446"><tspan
+             x="662.53497"
+             y="819.75"
+             id="tspan12444">49</tspan></text>
+      </g>
+      <g
+         id="g12456">
+        <ellipse
+           style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-opacity:1"
+           cx="737.53497"
+           cy="817.5"
+           rx="34.956001"
+           ry="17.478001"
+           id="ellipse12450" />
+        <text
+           font-size="12.7998px"
+           style="font-style:normal;font-weight:normal;font-family:sans-serif;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none"
+           x="737.53497"
+           y="819.75"
+           id="text12454"><tspan
+             x="737.53497"
+             y="819.75"
+             id="tspan12452">52</tspan></text>
+      </g>
+      <line
+         style="fill:none;stroke:#000000;stroke-width:2;stroke-opacity:1"
+         x1="649.14398"
+         y1="736.39697"
+         x2="701.46002"
+         y2="701.04303"
+         id="line12458" />
+      <line
+         style="fill:none;stroke:#000000;stroke-width:2;stroke-opacity:1"
+         x1="733.06201"
+         y1="704.13202"
+         x2="749.54102"
+         y2="733.30701"
+         id="line12460" />
+      <line
+         style="fill:none;stroke:#000000;stroke-width:2;stroke-opacity:1"
+         x1="884.48798"
+         y1="709.98102"
+         x2="888.23999"
+         y2="731.82001"
+         id="line12462" />
+      <line
+         style="fill:none;stroke:#000000;stroke-width:2;stroke-opacity:1"
+         x1="910.01099"
+         y1="702.98901"
+         x2="994.71698"
+         y2="738.81299"
+         id="line12464" />
+      <line
+         style="fill:none;stroke:#000000;stroke-width:2;stroke-opacity:1"
+         x1="616.96802"
+         y1="768.56702"
+         x2="598.10101"
+         y2="799.93298"
+         id="line12466" />
+      <line
+         style="fill:none;stroke:#000000;stroke-width:2;stroke-opacity:1"
+         x1="636.86603"
+         y1="768.729"
+         x2="653.20398"
+         y2="799.771"
+         id="line12468" />
+      <line
+         style="fill:none;stroke:#000000;stroke-width:2;stroke-opacity:1"
+         x1="753.51599"
+         y1="769.19202"
+         x2="743.55298"
+         y2="799.30798"
+         id="line12470" />
+      <g
+         id="g12478">
+        <ellipse
+           style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-opacity:1"
+           cx="627.53497"
+           cy="751"
+           rx="34.956001"
+           ry="17.478001"
+           id="ellipse12472" />
+        <text
+           font-size="12.7998px"
+           style="font-style:normal;font-weight:normal;font-family:sans-serif;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none"
+           x="627.53497"
+           y="753.25"
+           id="text12476"><tspan
+             x="627.53497"
+             y="753.25"
+             id="tspan12474">48</tspan></text>
+      </g>
+      <g
+         id="g12486">
+        <ellipse
+           style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-opacity:1"
+           cx="759.53497"
+           cy="751"
+           rx="34.956001"
+           ry="17.478001"
+           id="ellipse12480" />
+        <text
+           font-size="12.7998px"
+           style="font-style:normal;font-weight:normal;font-family:sans-serif;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none"
+           x="759.53497"
+           y="753.25"
+           id="text12484"><tspan
+             x="759.53497"
+             y="753.25"
+             id="tspan12482">60</tspan></text>
+      </g>
+      <g
+         id="g12494">
+        <ellipse
+           style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-opacity:1"
+           cx="891.53497"
+           cy="751"
+           rx="36.536499"
+           ry="18.2682"
+           id="ellipse12488" />
+        <text
+           font-size="12.7998px"
+           style="font-style:normal;font-weight:normal;font-family:sans-serif;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none"
+           x="891.53497"
+           y="753.25"
+           id="text12492"><tspan
+             x="891.53497"
+             y="753.25"
+             id="tspan12490">110</tspan></text>
+      </g>
+      <g
+         id="g12502">
+        <ellipse
+           style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-opacity:1"
+           cx="1023.53"
+           cy="751"
+           rx="36.536499"
+           ry="18.2682"
+           id="ellipse12496" />
+        <text
+           font-size="12.7998px"
+           style="font-style:normal;font-weight:normal;font-family:sans-serif;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none"
+           x="1023.53"
+           y="753.25"
+           id="text12500"><tspan
+             x="1023.53"
+             y="753.25"
+             id="tspan12498">165</tspan></text>
+      </g>
+    </g>
+  </g>
+</svg>
