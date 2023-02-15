@@ -3,45 +3,74 @@
 #include <string.h>
 #include "aluno.h"
 
-struct aluno
+void cadastraAluno()
 {
-    char *nome[50];
-    char *curso[40];
-    int nro_UNESP;
-};
-
-Aluno *criaAluno(char *nome, char *curso, int nro_UNESP)
-{
+    // Aloca um aluno
     Aluno *aluno = (Aluno *)malloc(sizeof(Aluno));
 
     if (!aluno)
     {
-        printf("ERRO: memória insuficiente!\n");
+        printf("ERRO: memoria insuficiente!\n", "Encerrando programa\n");
         exit(1);
     }
-    
-    aluno->nro_UNESP = nro_UNESP;
-    strcpy(aluno->nome, nome);
-    strcpy(aluno->curso, curso);
 
-    return aluno;
-}
+    // Recebe os dados do aluno e salva na struct
+    printf("Digite o RA do aluno:\n");
+    scanf("%d", &aluno->ra);
+    printf("Digite o curso do aluno:\n");
+    scanf("%*c");
+    fgets(aluno->curso, 58, stdin);
+    aluno->curso[strcspn(aluno->curso, "\n")] = 0;
+    printf("Digite o nome do aluno:\n");
+    fgets(aluno->nome, 58, stdin);
+    aluno->nome[strcspn(aluno->nome, "\n")] = 0;
 
-void cadastraAluno(Aluno *aluno){
-    FILE *file = fopen("turma.txt", "w");
+    // Abre o arquivo turma a ser escrito
+    FILE *turma = fopen("turma.txt", "a");
 
-    if(!file){
+    if (!turma)
+    {
         printf("ERRO: nao foi possivel abrir o arquivo!\n");
         exit(1);
     }
 
-    fprintf(file, "%d\n", aluno->nro_UNESP);
-    fprintf(file, "%s\n", aluno->nome);
-    fprintf(file, "%s\n", aluno->curso);
+    int inicio = ftell(turma);
+    fprintf(turma, "%d|", aluno->ra);
+    fprintf(turma, "%s|", aluno->curso);
+    fprintf(turma, "%s|", aluno->nome);
+    int fim = ftell(turma);
 
-    fclose(file); 
+    // Escreve # ao final do registro
+    int i;
+    for (i = fim; i < (inicio + 128); i++)
+        fprintf(turma, "#");
+    fprintf(turma, "\n");
+
+    fclose(turma);
+
+    printf("\nAluno cadastrado com sucesso!\nPressione qualquer tecla para continuar\n");
+    scanf("%*c");
 }
 
-void listaAluno(){
+void buscaAluno(int ra)
+{
+    FILE *turma = fopen("turma.txt", "r");
+    FILE *index = fopen("index.txt", "a");
+    char c;
 
+    int inicio = fseek(turma, 0, SEEK_CUR);
+    int i = 0;
+
+    while (c != '\n')
+    {
+        fprintf(index, "%d ", i);
+        while (c != '|')
+        {
+            c = fgetc(turma);
+            fputc(c, index);   
+        }
+        fprintf(index, "\n");
+        i++;
+
+    }
 }

@@ -1,5 +1,10 @@
-typedef struct aluno Aluno;
+// Arquivo de cabecalho aluno
+typedef struct aluno
+{
+    char nome[58];
+    char curso[58];
+    int ra;
+}Aluno;
 
-Aluno *criaAluno(char *nome, char *curso, int nro_UNESP);
-
-void cadastraAluno(Aluno *aluno);
+void cadastraAluno();
+void buscaAluno();

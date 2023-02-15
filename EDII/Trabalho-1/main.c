@@ -1,13 +1,37 @@
 #include <stdio.h>
-#include "menu.h"
+#include <stdlib.h>
 #include "aluno.h"
+#include "menu.h"
 
 int main()
 {
+    int op, ra;
 
-    Aluno *aluno = criaAluno("Matheus Yoshimitsu Tamashiro Pires Lanzo", "Bacharelado em Ciencia da Computacao", 211042579);
+    // Loop para manter o programa rodando
+    do
+    {
+        menuPrincipal();
+        scanf(" %d", &op);
 
-    cadastraAluno(aluno);
+        switch (op)
+        {
+        case 1:
+            cadastraAluno();
+            break;
+        case 2:
+            printf("Digite o RA do aluno:\n");
+            scanf("%d", &ra);
+            buscaAluno(ra);
+            break;
+        case 3:
+            printf("Encerrando programa...\n");
+            exit(0);
+            break;
+        default:
+            printf("Opcao invalida!\n");
+            break;
+        }
+    } while (op != 3);
 
     return 0;
 }
